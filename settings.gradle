@@ -1,0 +1,4 @@
+rootProject.name = 'food-planner'
+include 'frontend'
+include 'backend'
+

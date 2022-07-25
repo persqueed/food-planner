@@ -1,0 +1,13 @@
+# nuxt.js build output
+.nuxt
+
+# Nuxt generate
+dist
+
+# Nuxt static files
+static
+
+#VSCode workspace settings
+.vscode
+
+/style
