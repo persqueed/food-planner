@@ -4,11 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -22,20 +18,15 @@ import java.io.Serializable;
 public class GroceryItem implements Serializable {
 
     @Id
-    @SequenceGenerator(name = "supplierSequenceGenerator", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
-
-    @Column(name = "ingredient_name", nullable = false, unique = true)
-    private String ingredientName;
 
     @Column(name = "completed")
     private Boolean completed;
 
-    @Column(name = "quantity")
-    private Long quantity;
 
-    @Column(name = "quantity_measurement")
-    private String quantityMeasurement;
+    @ManyToOne(optional = false)
+    private Ingredient ingredient;
 
 }
